@@ -1,3 +1,7 @@
+# Foram acrescentadas constantes para a gravidade e viscosidade da água.
+# Foi adicionada a conversão de quilopascal para metros de coluna d'água.
+# A pressão final passou a ser exibida nos dois formatos.
+
 # No código abaixo você verá # TODO.
 # Essa é uma das anotações especiais que o programador pode usar em comentários para indicar que uma tarefa
 #  está pendente. “TODO” traduzido para o português significa “a fazer”.
@@ -10,6 +14,8 @@ HDPE_SDR11_DIAMETRO_INTERNO = 0.048692   # (metros)  1.917 polegadas
 HDPE_SDR11_FATOR_ATRITO = 0.018          # (sem unidade)
 VELOCIDADE_RESIDENCIAL = 1.75            # (metros / segundo)
 DENSIDADE_AGUA = 998.2                   # densidade da água (998.2 quilogramas / metro^3)
+ACELERACAO_GRAVIDADE_TERRA = 9.80665
+VISCOSIDADE_DINAMICA_AGUA = 0.0010016
 
 def main():
     altura_torre = float(input("Altura da torre de água (metros): "))
@@ -35,7 +41,11 @@ def main():
     velocidade = VELOCIDADE_RESIDENCIAL
     perda = calc_perda_pressao_tubo(diametro, comprimento2, atrito, velocidade)
     pressao += perda
+
+    mca = converter_kpa_para_mca(pressao)
+
     print(f"Pressão na casa: {pressao:.1f} quilopascal")
+    print(f"Pressão na casa: {mca:.1f} metros de coluna d'água")
 
 
 def calc_altura_coluna_agua(altura_torre, altura_tanque):
@@ -43,13 +53,12 @@ def calc_altura_coluna_agua(altura_torre, altura_tanque):
 
 
 def calc_pressao_pela_altura(altura):
-    # TODO: Implementar
-    return 0
+    return DENSIDADE_AGUA * ACELERACAO_GRAVIDADE_TERRA * altura / 1000
 
 
 def calc_perda_pressao_tubo(diametro_tubo, comprimento_tubo, fator_atrito, velocidade_fluido):
     numerador = -fator_atrito * comprimento_tubo * DENSIDADE_AGUA * velocidade_fluido ** 2
-    denominador = 200 * diametro_tubo
+    denominador = 2000 * diametro_tubo
     return numerador / denominador
 
 
@@ -58,13 +67,16 @@ def calc_perda_pressao_conexoes(velocidade_fluido, quantidade_conexoes):
 
 
 def calc_num_reynolds(diametro_hidraulico, velocidade_fluido):
-    # TODO: Implementar corretamente
-    return 0
+    viscosidade = VISCOSIDADE_DINAMICA_AGUA
+    return DENSIDADE_AGUA * diametro_hidraulico *velocidade_fluido / viscosidade
 
 
 def calc_perda_pressao_reducao_tubo(diametro_maior, velocidade_fluido, numero_reynolds, diametro_menor):
-    k = (0.1 + 50 / numero_reynolds) * ((diametro_maior / diametro_menor) ** 4 + 1)
+    k = (0.1 + 50 / numero_reynolds) * ((diametro_maior / diametro_menor) ** 4 - 1)
     return -k * DENSIDADE_AGUA * velocidade_fluido ** 2 / 2000
+
+def converter_kpa_para_mca(kpa):
+    return kpa / 9.80665
 
 
 if __name__ == "__main__":

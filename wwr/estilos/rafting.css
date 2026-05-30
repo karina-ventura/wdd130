@@ -9,6 +9,9 @@
 
 header {
     color: var(--cor-destaque2);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
 }
 
 *{
@@ -39,13 +42,26 @@ section p {
     color: var(--cor-secundaria);
 }
 
-nav, p, section, article {
+nav, p, article {
     margin: 16px;
     padding: 8px;
 }
 
+section {
+    padding: 8px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 header nav a {
     display: block;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    padding: 8px 12px;
 }
 
 .socialmedia a {
@@ -83,4 +99,49 @@ header nav a {
 .hero article img {
     float: right;
     width: 125px;
+}
+
+.history {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+}
+
+.history p {
+    text-align: justify;
+}
+
+.adventure-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.adventure img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.adventure figure {
+    text-align: center;
+    width: 150px;
+    margin: 0;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia img {
+    width: 40px;
+    height: auto;
 }
