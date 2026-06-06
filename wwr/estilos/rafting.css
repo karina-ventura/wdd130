@@ -12,6 +12,10 @@ header {
     display: grid;
     grid-template-columns: 200px 1fr;
     align-items: center;
+
+    background-color: var(--cor-destaque2);
+    border: 1px solid #999;
+    padding: 5px 10px;
 }
 
 *{
@@ -57,11 +61,25 @@ nav {
     align-items: center;
 }
 
+
+header nav a {
+    display: block;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    padding: 6px 12px;
+
+    border: 1px solid #999;
+    background-color: white;
+}
+
 header nav a {
     display: block;
     text-decoration: none;
     color: var(--cor-secundaria);
     padding: 8px 12px;
+
+     border: 1px solid #999;
+    background-color: white;
 }
 
 .socialmedia a {
@@ -134,6 +152,10 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: var(--cor-destaque2);
+    border: 1px solid #999;
+    padding: 15px;
 }
 
 .socialmedia {
@@ -144,4 +166,111 @@ footer {
 .socialmedia img {
     width: 40px;
     height: auto;
+}
+
+.contact-info {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+    align-items: start;
+}
+
+.map iframe {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: var(--fonte-body);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: var(--cor-destaque1);
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button[type="submit"]:hover {
+    opacity: 0.9;
+}
+
+.employees {
+    margin: 40px 0;
+    text-align: center;
+    border: 1px solid #999;
+    padding: 20px;
+}
+
+.employees h2 {
+    margin-bottom: 20px;
+}
+
+.employee-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.employee-gallery figure {
+    flex: 1;
+}
+
+.employee-gallery img {
+    width: 100%;
+    max-width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.employee-gallery figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.purpose-group {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    gap: 3px;
+    align-items: start;
+}
+
+.radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
