@@ -26,7 +26,7 @@
 
     <main>
 
-        <h1>Companhia de Rafting em Corredeiras</h1>
+        <h1>White Water Rafting - Fale Conosco</h1>
 
         <section class="contact-info">
 
@@ -63,17 +63,14 @@
 
                     <div class="radio-options">
 
-                        <label>
-                            <input type="radio" name="purpose" value="general"> Dúvida Geral
-                        </label>
+                        <input type="radio" id="general" name="purpose" value="general">
+                        <label for="general">Dúvida Geral</label>
 
-                        <label>
-                            <input type="radio" name="purpose" value="reservation"> Pergunta sobre Reserva
-                        </label>
+                        <input type="radio" id="reservation" name="purpose" value="reservation">
+                        <label for="reservation">Pergunta sobre Reserva</label>
 
-                        <label>
-                            <input type="radio" name="purpose" value="suggestion"> Sugestão
-                        </label>
+                        <input type="radio" id="suggestion" name="purpose" value="suggestion">
+                        <label for="suggestion">Sugestão</label>
 
                     </div>
 
@@ -82,9 +79,8 @@
                 <label for="message">Mensagem:</label>
                 <textarea id="message" name="message" placeholder="Digite aqui"></textarea>
 
-                <label>
-                    <input type="checkbox" name="newsletter"> Por favor, me inscreva na newsletter mensal
-                </label>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Por favor, me inscreva na newsletter mensal</label>
 
                 <button type="submit">Entrar em Contato!</button>
 
@@ -126,7 +122,7 @@
             &copy; 2026 White Water Rafting | Karina Evelyn Ventura de Oliveira
         </p>
 
-        <nav class="socialmedia">
+        <nav class="redes-sociais">
 
             <a href="https://facebook.com">
                 <img src="imagens/facebook_220200.png" alt="Ícone do Facebook">

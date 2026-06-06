@@ -46,7 +46,7 @@ section p {
     color: var(--cor-secundaria);
 }
 
-nav, p, article {
+nav, article {
     margin: 16px;
     padding: 8px;
 }
@@ -72,17 +72,8 @@ header nav a {
     background-color: white;
 }
 
-header nav a {
-    display: block;
-    text-decoration: none;
-    color: var(--cor-secundaria);
-    padding: 8px 12px;
 
-     border: 1px solid #999;
-    background-color: white;
-}
-
-.socialmedia a {
+.redes-sociais a {
     text-decoration: none;
 }
 
@@ -158,12 +149,12 @@ footer {
     padding: 15px;
 }
 
-.socialmedia {
+.redes-sociais {
     display: flex;
     gap: 10px;
 }
 
-.socialmedia img {
+.redes-sociais img {
     width: 40px;
     height: auto;
 }
