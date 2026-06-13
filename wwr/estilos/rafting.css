@@ -265,3 +265,97 @@ button[type="submit"]:hover {
     flex-direction: column;
     gap: 12px;
 }
+
+.page-title {
+    text-align: center;
+    margin: 50px 0 40px 0;
+}
+
+.trip-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 40px;
+    margin: 40px 0;
+
+    background-color: #b5c8d1;
+    border-radius: 12px;
+}
+
+.cta-text {
+    max-width: 70%;
+}
+
+.trip-cta h2 {
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: white;
+    color: var(--cor-secundaria);
+}
+
+.trips {
+    margin: 0 0 40px 0;
+}
+
+.trip {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 30px;
+    margin: 0 0 40px 0; padding: 0;
+    margin-bottom: 40px;
+    align-items: start;
+}
+
+.trip img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.trip table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.trip th,
+.trip td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.trip th {
+    background-color: #f0f0f0;
+}
+
+
+.home-offers, .home-mission {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.home-mission img,
+.home-offers img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.home-mission p,
+.home-offers p {
+    text-align: justify;
+    line-height: 1.6;
+}
